@@ -1,0 +1,103 @@
+﻿@page
+@model EvetWebsite.Areas.Admin.Pages.Dashboard.IndexModel
+@{
+}
+<div class="card">
+    <div class="card-body">
+
+
+
+        <div class="content-header" style="padding:1px 0;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12" style="padding-left:0;">
+                        <h5 class="m-0" style="font-weight:900;">DASHBOARD ANALYSIS</h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-3 col-6">
+                <a asp-page="/IDonations/Index" class="small-box-footer">
+                    <div class="small-box bg-success" style="margin-bottom: 7.5px;margin-top: 7.5px;">
+                        <div class="inner">
+                            <h3 style="white-space: normal;text-align: center;height: 35px;margin:auto;">
+                              DONATIONS
+                            </h3>
+                            <p style="text-align: center;font-weight: 900;font-size: 2.0em;margin: 0;">@Model.Donations</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-6">
+                <a asp-page="/IReservation/Index" class="small-box-footer">
+                    <div class="small-box bg-warning" style="margin-bottom: 7.5px;margin-top: 7.5px;">
+                        <div class="inner">
+                            <h3 style="white-space: normal;text-align: center;height: 35px;margin:auto;">
+                                RESERVATIONS
+                            </h3>
+                            <p style="text-align: center;font-weight: 900;font-size: 2.0em;margin: 0;">@Model.Reservation</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-6">
+                <a asp-page="/IBirthdayMessage/Index" class="small-box-footer">
+                    <div class="small-box bg-primary" style="margin-bottom: 7.5px;margin-top: 7.5px;">
+                        <div class="inner">
+                            <h3 style="white-space: normal;text-align: center;height: 35px;margin:auto;">
+                               BIRTHDAY MESSAGES
+                            </h3>
+                            <p style="text-align: center;font-weight: 900;font-size: 2.0em;margin: 0;">@Model.Messages</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-6">
+                <a asp-page="/IContact/Index" class="small-box-footer">
+                    <div class="small-box bg-danger" style="margin-bottom: 7.5px;margin-top: 7.5px;">
+                        <div class="inner">
+                            <h3 style="white-space: normal;text-align: center;height: 35px;margin:auto;">
+                               CONTACT US
+                            </h3>
+                            <p style="text-align: center;font-weight: 900;font-size: 2.0em;margin: 0;">@Model.Contact</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-6">
+                <a asp-page="/ICommittee/Index" class="small-box-footer">
+                    <div class="small-box bg-warning" style="margin-bottom: 7.5px;margin-top: 7.5px;">
+                        <div class="inner">
+                            <h3 style="white-space: normal;text-align: center;height: 35px;margin:auto;">
+                                COMMITTEES
+                            </h3>
+                            <p style="text-align: center;font-weight: 900;font-size: 2.0em;margin: 0;">@Model.Committees</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+             
+
+        </div>
+
+    </div><!-- /.container-fluid -->
+
+</div>

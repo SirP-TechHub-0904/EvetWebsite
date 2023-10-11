@@ -1,0 +1,81 @@
+﻿@page
+@model EvetWebsite.Pages.DonationsModel
+
+@{
+    ViewData["Title"] = "Donations";
+}
+
+<h1>Donations</h1>
+
+<h4>Donation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Donation.FirstName" class="control-label"></label>
+                <input asp-for="Donation.FirstName" class="form-control" />
+                <span asp-validation-for="Donation.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.LastName" class="control-label"></label>
+                <input asp-for="Donation.LastName" class="form-control" />
+                <span asp-validation-for="Donation.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.Phone" class="control-label"></label>
+                <input asp-for="Donation.Phone" class="form-control" />
+                <span asp-validation-for="Donation.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.Email" class="control-label"></label>
+                <input asp-for="Donation.Email" class="form-control" />
+                <span asp-validation-for="Donation.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.Office" class="control-label"></label>
+                <input asp-for="Donation.Office" class="form-control" />
+                <span asp-validation-for="Donation.Office" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.Amount" class="control-label"></label>
+                <input asp-for="Donation.Amount" class="form-control" />
+                <span asp-validation-for="Donation.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.Date" class="control-label"></label>
+                <input asp-for="Donation.Date" class="form-control" />
+                <span asp-validation-for="Donation.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.Note" class="control-label"></label>
+                <input asp-for="Donation.Note" class="form-control" />
+                <span asp-validation-for="Donation.Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.ApprovedBy" class="control-label"></label>
+                <input asp-for="Donation.ApprovedBy" class="form-control" />
+                <span asp-validation-for="Donation.ApprovedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.Status" class="control-label"></label>
+                <select asp-for="Donation.Status" class="form-control"></select>
+                <span asp-validation-for="Donation.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Donation.PaymentType" class="control-label"></label>
+                <select asp-for="Donation.PaymentType" class="form-control"></select>
+                <span asp-validation-for="Donation.PaymentType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

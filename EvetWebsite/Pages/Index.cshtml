@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 <div data-elementor-type="wp-post" data-elementor-id="10" class="elementor elementor-10">
     <section class="elementor-section elementor-top-section elementor-element elementor-element-814c197 elementor-section-height-min-height elementor-section-items-stretch elementor-section-content-middle elementor-section-boxed elementor-section-height-default">
@@ -1158,96 +1158,101 @@
 
                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-b3eecdd elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b3eecdd" data-element_type="section">
                         <div class="elementor-container elementor-column-gap-default">
-                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-2147b71" data-id="2147b71" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                                <div class="elementor-widget-wrap elementor-element-populated">
-                                    <div class="elementor-background-overlay"></div>
-                                    <div class="elementor-element elementor-element-75afe51 elementor-view-default elementor-widget elementor-widget-icon" data-id="75afe51" data-element_type="widget" data-widget_type="icon.default">
-                                        <div class="elementor-widget-container">
-                                            <div class="elementor-icon-wrapper">
-                                                <div class="elementor-icon">
-                                                    <i aria-hidden="true" class="icon icon-quote"></i>
+
+                            @foreach (var item in Model.BirthdayMessage)
+                            {
+
+                                <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-2147b71" data-id="2147b71" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                    <div class="elementor-widget-wrap elementor-element-populated">
+                                        <div class="elementor-background-overlay"></div>
+                                        <div class="elementor-element elementor-element-75afe51 elementor-view-default elementor-widget elementor-widget-icon" data-id="75afe51" data-element_type="widget" data-widget_type="icon.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-icon-wrapper">
+                                                    <div class="elementor-icon">
+                                                        <i aria-hidden="true" class="icon icon-quote"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="elementor-element elementor-element-428a7d3 elementor-widget elementor-widget-testimonial" data-id="428a7d3" data-element_type="widget" data-widget_type="testimonial.default">
-                                        <div class="elementor-widget-container">
-                                            <style>
-                                                /*! elementor - v3.15.0 - 20-08-2023 */
-                                                .elementor-testimonial-wrapper {
-                                                    overflow: hidden;
-                                                    text-align: center
-                                                }
-
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-content {
-                                                        font-size: 1.3em;
-                                                        margin-bottom: 20px
+                                        <div class="elementor-element elementor-element-428a7d3 elementor-widget elementor-widget-testimonial" data-id="428a7d3" data-element_type="widget" data-widget_type="testimonial.default">
+                                            <div class="elementor-widget-container">
+                                                <style>
+                                                    /*! elementor - v3.15.0 - 20-08-2023 */
+                                                    .elementor-testimonial-wrapper {
+                                                        overflow: hidden;
+                                                        text-align: center
                                                     }
 
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-name {
-                                                        line-height: 1.5;
-                                                        display: block
-                                                    }
-
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-job {
-                                                        font-size: .85em;
-                                                        display: block
-                                                    }
-
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-meta {
-                                                        width: 100%;
-                                                        line-height: 1
-                                                    }
-
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-meta-inner {
-                                                        display: inline-block
-                                                    }
-
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-details, .elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image {
-                                                        display: table-cell;
-                                                        vertical-align: middle
-                                                    }
-
-                                                        .elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image img {
-                                                            width: 60px;
-                                                            height: 60px;
-                                                            border-radius: 50%;
-                                                            -o-object-fit: cover;
-                                                            object-fit: cover;
-                                                            max-width: none
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-content {
+                                                            font-size: 1.3em;
+                                                            margin-bottom: 20px
                                                         }
 
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-image {
-                                                        padding-right: 15px
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-name {
+                                                            line-height: 1.5;
+                                                            display: block
+                                                        }
+
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-job {
+                                                            font-size: .85em;
+                                                            display: block
+                                                        }
+
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-meta {
+                                                            width: 100%;
+                                                            line-height: 1
+                                                        }
+
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-meta-inner {
+                                                            display: inline-block
+                                                        }
+
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-details, .elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image {
+                                                            display: table-cell;
+                                                            vertical-align: middle
+                                                        }
+
+                                                            .elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image img {
+                                                                width: 60px;
+                                                                height: 60px;
+                                                                border-radius: 50%;
+                                                                -o-object-fit: cover;
+                                                                object-fit: cover;
+                                                                max-width: none
+                                                            }
+
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-image {
+                                                            padding-right: 15px
+                                                        }
+
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-details {
+                                                            text-align: left
+                                                        }
+
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-details, .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image {
+                                                            display: block
+                                                        }
+
+                                                        .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image {
+                                                            margin-bottom: 20px
+                                                        }
+
+                                                    .elementor-10 .elementor-element.elementor-element-b3eecdd {
+                                                        margin-top: 0%;
+                                                        margin-bottom: 0;
                                                     }
+                                                </style>
+                                                <div class="elementor-testimonial-wrapper">
+                                                    <div class="elementor-testimonial-content">@item.Message</div>
 
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-details {
-                                                        text-align: left
-                                                    }
-
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-details, .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image {
-                                                        display: block
-                                                    }
-
-                                                    .elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image {
-                                                        margin-bottom: 20px
-                                                    }
-
-                                                .elementor-10 .elementor-element.elementor-element-b3eecdd {
-                                                    margin-top: 0%;
-                                                    margin-bottom: 0;
-                                                }
-                                            </style>
-                                            <div class="elementor-testimonial-wrapper">
-                                                <div class="elementor-testimonial-content">our impact as Prof. reverberates throughout our institute. Here's to a birthday that's as exceptional as your work!</div>
-
-                                                <div class="elementor-testimonial-meta elementor-has-image elementor-testimonial-image-position-aside">
-                                                    <div class="elementor-testimonial-meta-inner">
+                                                    <div class="elementor-testimonial-meta elementor-has-image elementor-testimonial-image-position-aside">
+                                                        <div class="elementor-testimonial-meta-inner">
 
 
-                                                        <div class="elementor-testimonial-details">
-                                                            <div class="elementor-testimonial-name">Abraham Adamu</div>
-                                                            <div class="elementor-testimonial-job">CEO Havit Foods</div>
+                                                            <div class="elementor-testimonial-details">
+                                                                <div class="elementor-testimonial-name">@item.Fullname</div>
+                                                                <div class="elementor-testimonial-job">@item.Office</div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1255,68 +1260,23 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-f0b97e9" data-id="f0b97e9" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                                <div class="elementor-widget-wrap elementor-element-populated">
-                                    <div class="elementor-background-overlay"></div>
-                                    <div class="elementor-element elementor-element-6236fe5 elementor-view-default elementor-widget elementor-widget-icon" data-id="6236fe5" data-element_type="widget" data-widget_type="icon.default">
-                                        <div class="elementor-widget-container">
-                                            <div class="elementor-icon-wrapper">
-                                                <div class="elementor-icon">
-                                                    <i aria-hidden="true" class="icon icon-quote"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="elementor-element elementor-element-d8bb709 elementor-widget elementor-widget-testimonial" data-id="d8bb709" data-element_type="widget" data-widget_type="testimonial.default">
-                                        <div class="elementor-widget-container">
-                                            <div class="elementor-testimonial-wrapper">
-                                                <div class="elementor-testimonial-content">Celebrating the birthday of an esteemed colleague and Prof. at our education institute. Your dedication shines brightly!</div>
+                            }
 
-                                                <div class="elementor-testimonial-meta elementor-has-image elementor-testimonial-image-position-aside">
-                                                    <div class="elementor-testimonial-meta-inner">
 
-                                                        <div class="elementor-testimonial-details">
-                                                            <div class="elementor-testimonial-name">Prof. Suliman H.</div>
-                                                            <div class="elementor-testimonial-job">H.O.D Research</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1c8b4eb" data-id="1c8b4eb" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                                <div class="elementor-widget-wrap elementor-element-populated">
-                                    <div class="elementor-background-overlay"></div>
-                                    <div class="elementor-element elementor-element-85430fa elementor-view-default elementor-widget elementor-widget-icon" data-id="85430fa" data-element_type="widget" data-widget_type="icon.default">
-                                        <div class="elementor-widget-container">
-                                            <div class="elementor-icon-wrapper">
-                                                <div class="elementor-icon">
-                                                    <i aria-hidden="true" class="icon icon-quote"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="elementor-element elementor-element-8aed3c2 elementor-widget elementor-widget-testimonial" data-id="8aed3c2" data-element_type="widget" data-widget_type="testimonial.default">
-                                        <div class="elementor-widget-container">
-                                            <div class="elementor-testimonial-wrapper">
-                                                <div class="elementor-testimonial-content">An extraordinary Prof. who makes a difference daily. Wishing you a birthday filled with laughter and cherished moments.</div>
 
-                                                <div class="elementor-testimonial-meta elementor-has-image elementor-testimonial-image-position-aside">
-                                                    <div class="elementor-testimonial-meta-inner">
-
-                                                        <div class="elementor-testimonial-details">
-                                                            <div class="elementor-testimonial-name">Micheal Stive</div>
-                                                            <div class="elementor-testimonial-job">Student</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="elementor-widget-container">
+                            <div class="elementor-button-wrapper">
+                                <a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink" asp-page="/BirthdayWishes">
+                                    <span class="elementor-button-content-wrapper">
+                                        <span class="elementor-button-text">View All Birthday Wishes</span>
+                                    </span>
+                                </a>
+                                <a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink" asp-page="/WriteWishes">
+                                    <span class="elementor-button-content-wrapper">
+                                        <span class="elementor-button-text">Write Your Birthday Wishes</span>
+                                    </span>
+                                </a>
                             </div>
                         </div>
                     </section>

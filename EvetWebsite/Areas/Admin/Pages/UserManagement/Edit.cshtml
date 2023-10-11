@@ -1,0 +1,70 @@
+﻿@page
+@model EvetWebsite.Areas.Admin.Pages.UserManagement.EditModel
+@{
+}
+
+<div class="card card-default">
+    <div class="card-header">
+        <h3 class="card-title">UPDATE USER</h3>
+
+    </div>
+    <!-- /.card-header -->
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="UserDatas.Id" />
+                    
+                    <div class="form-group">
+                        <label asp-for="UserDatas.Fullname" class="control-label"></label>
+                        <input asp-for="UserDatas.Fullname" class="form-control" />
+                        <span asp-validation-for="UserDatas.Fullname" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="UserDatas.Office" class="control-label"></label>
+                        <input asp-for="UserDatas.Office" class="form-control" />
+                        <span asp-validation-for="UserDatas.Office" class="text-danger"></span>
+                    </div>
+
+
+                  
+
+                    <div class="form-group">
+                        <label asp-for="UserDatas.PhoneNumber" class="control-label"></label>
+                        <input asp-for="UserDatas.PhoneNumber" class="form-control" />
+                        <span asp-validation-for="UserDatas.PhoneNumber" class="text-danger"></span>
+                    </div>
+                     
+                     
+
+                    <div class="form-group">
+                        <label asp-for="UserDatas.UserStatus" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.UserDatas.UserStatus, new SelectList(Enum.GetValues(typeof(EvetWebsite.Data.Models.UserStatus))), new { @class = "form-control" })
+                        <span asp-validation-for="UserDatas.UserStatus" class="text-danger"></span>
+                    </div>
+  
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                        <a asp-page="./Index" class="btn bg-gradient-warning btn-sm" style="float:right;">Back</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- /.row -->
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
