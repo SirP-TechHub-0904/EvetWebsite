@@ -13,7 +13,9 @@
         public ReservationType ReservationType { get; set; }
         public DateTime Date { get;set; }
         public string Note { get; set;}
+        public string? ReservationNote { get; set; }
+        public bool VerifiedReservation { get; set; }
 
-        
+
     }
 }

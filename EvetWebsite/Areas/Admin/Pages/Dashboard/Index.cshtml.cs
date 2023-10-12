@@ -20,6 +20,9 @@ namespace EvetWebsite.Areas.Admin.Pages.Dashboard
         public int Contact { get;set; }
         public decimal Donations { get;set; }
         public int Reservation { get;set; } 
+        public int RSVP { get;set; }
+        public int Present { get;set; } 
+        public int Request { get;set; }
 
         public async Task OnGetAsync()
         {
@@ -27,7 +30,10 @@ namespace EvetWebsite.Areas.Admin.Pages.Dashboard
             Committees = await _context.CommitteeCategories.CountAsync();
             Contact = await _context.Contacts.CountAsync();
             Donations = await _context.Donations.Where(x=>x.Status == Status.Completed).SumAsync(x=>x.Amount);
-            Reservation = await _context.Reservations.CountAsync(); 
+            Present = await _context.RSVPs.Where(x=>x.Present == true).CountAsync();
+            Reservation = await _context.Reservations.CountAsync();
+            RSVP = await _context.RSVPs.CountAsync();
+            Request = await _context.InvitationRequests.CountAsync();
         }
     }
 }

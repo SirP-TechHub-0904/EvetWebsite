@@ -4,5 +4,7 @@
     {
         public long Id { get; set; }
         public string Title { get; set; }
+
+        public ICollection<Committee> Committees { get; set; }
     }
 }

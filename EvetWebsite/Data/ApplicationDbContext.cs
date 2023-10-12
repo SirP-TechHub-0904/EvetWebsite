@@ -19,5 +19,7 @@ namespace EvetWebsite.Data
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<ReservationType> ReservationsType { get; set;}
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<InvitationRequest> InvitationRequests {  get; set; } 
+        public DbSet<RSVP> RSVPs { get; set; }
     }
 }

@@ -1,0 +1,130 @@
+﻿@page
+@model EvetWebsite.Areas.Admin.Pages.IRsvp.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">RSVPs</h3>
+ 
+            <a asp-page="./Create" class="btn bg-gradient-warning btn-sm" style="float:right;">Add New</a>
+        
+    </div>
+    <div class="card-header">
+        <div class="btn-group">
+            <button class="btn btn-primary">
+                All<br />
+                (@Model.RSVP.Count())
+            </button>
+            <button class="btn btn-success">
+                Sent IV<br />
+                (@Model.RSVP.Where(x => x.SentViaEmail == true).Count())
+            </button>
+            <button class="btn btn-success">
+                IV Response<br />
+                (@Model.RSVP.Where(x => x.IVResponse == true).Count())
+            </button>
+            <button class="btn btn-success">
+                Present<br />
+                (@Model.RSVP.Where(x => x.Present == true).Count())
+            </button>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RSVP[0].Fullname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RSVP[0].Phone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RSVP[0].Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RSVP[0].Office)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RSVP[0].Date)
+                        </th>
+                        <th>
+                            Sent Mail
+                        </th>
+                        <th>
+                            Response
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RSVP[0].Present)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @{
+                    int sn = 0;
+                }
+                <tbody>
+                    @foreach (var item in Model.RSVP)
+                    {
+                        <tr>
+
+                            <td>
+                                @{
+                                    sn++;
+                                }
+                                @sn
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fullname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Office)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SentViaEmail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IVResponse)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Present)
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success">Action</button>
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-success dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                        </button>
+                                        <div class="dropdown-menu" style="">
+
+                                            <a class="dropdown-item" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                                            <a class="dropdown-item" asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

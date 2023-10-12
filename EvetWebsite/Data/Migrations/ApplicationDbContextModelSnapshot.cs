@@ -17,7 +17,7 @@ namespace EvetWebsite.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -272,6 +272,100 @@ namespace EvetWebsite.Data.Migrations
                     b.ToTable("Donations");
                 });
 
+            modelBuilder.Entity("EvetWebsite.Data.Models.InvitationRequest", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Office")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InvitationRequests");
+                });
+
+            modelBuilder.Entity("EvetWebsite.Data.Models.RSVP", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fullname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IVResponse")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ImageKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Office")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Present")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("SentViaEmail")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RSVPs");
+                });
+
             modelBuilder.Entity("EvetWebsite.Data.Models.Reservation", b =>
                 {
                     b.Property<long>("Id")
@@ -303,6 +397,9 @@ namespace EvetWebsite.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ReservationNote")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<long>("ReservationTypeId")
                         .HasColumnType("bigint");
 
@@ -313,6 +410,9 @@ namespace EvetWebsite.Data.Migrations
                     b.Property<string>("RoomType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("VerifiedReservation")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -484,7 +584,7 @@ namespace EvetWebsite.Data.Migrations
             modelBuilder.Entity("EvetWebsite.Data.Models.Committee", b =>
                 {
                     b.HasOne("EvetWebsite.Data.Models.CommitteeCategory", "CommitteeCategory")
-                        .WithMany()
+                        .WithMany("Committees")
                         .HasForeignKey("CommitteeCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -552,6 +652,11 @@ namespace EvetWebsite.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("EvetWebsite.Data.Models.CommitteeCategory", b =>
+                {
+                    b.Navigation("Committees");
                 });
 #pragma warning restore 612, 618
         }

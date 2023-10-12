@@ -581,7 +581,7 @@
                                     <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b730692">
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="elementor-background-overlay" style="background-image: url(../img/bg123.jpg);"></div>
-                                            <h4>Contact Us For Any Question</h4>
+                                            <h4 style="color:white;">Contact Us For Any Question</h4>
                                             <form method="post">
                                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                                 <div class="form-group">
@@ -611,7 +611,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label asp-for="Contact.Message" class="control-label"></label>
-                                                    <input asp-for="Contact.Message" class="form-control" />
+                                                    <textarea asp-for="Contact.Message" class="form-control" ></textarea>
                                                     <span asp-validation-for="Contact.Message" class="text-danger"></span>
                                                 </div>
 

@@ -1,0 +1,83 @@
+﻿@page
+@model EvetWebsite.Areas.Admin.Pages.IInvitationRequest.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="card card-default">
+    <div class="card-header">
+        <h3 class="card-title">DELETE INVITATION REQUEST</h3>
+
+    </div>
+    <!-- /.card-header -->
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Are you sure you want to delete this?</h3>
+                <div>
+                    <h4>InvitationRequest</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.InvitationRequest.Fullname)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.InvitationRequest.Fullname)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.InvitationRequest.Phone)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.InvitationRequest.Phone)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.InvitationRequest.Email)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.InvitationRequest.Email)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.InvitationRequest.Office)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.InvitationRequest.Office)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.InvitationRequest.Date)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.InvitationRequest.Date)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.InvitationRequest.Note)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.InvitationRequest.Note)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.InvitationRequest.Status)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.InvitationRequest.Status)
+                        </dd>
+                    </dl>
+
+                    <form method="post">
+                        <input type="hidden" asp-for="InvitationRequest.Id" />
+                        <input type="submit" value="Delete" class="btn btn-primary" />
+                        <a asp-page="./Index" class="btn bg-gradient-warning btn-sm" style="float:right;">Back</a>
+
+                    </form>
+
+                </div>
+            </div>
+
+
+            <!-- /.row -->
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+        </div>
+    </div>

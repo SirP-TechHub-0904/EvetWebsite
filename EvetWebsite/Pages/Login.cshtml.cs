@@ -61,16 +61,14 @@ namespace EvetWebsite.Pages
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
             }
-
-            returnUrl ??= Url.Content("~/");
+             
 
             ReturnUrl = returnUrl;
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl ??= Url.Content("~/");
-
+           
 
             if (ModelState.IsValid)
             {
@@ -81,6 +79,10 @@ namespace EvetWebsite.Pages
                 {
                     _logger.LogInformation("User logged in.");
                     //return LocalRedirect(returnUrl);
+                    if(returnUrl != null)
+                    {
+                        return LocalRedirect(returnUrl);
+                    }
                     return RedirectToPage("/Dashboard/Index", new {area="Admin"});
                 }
                 if (result.RequiresTwoFactor)

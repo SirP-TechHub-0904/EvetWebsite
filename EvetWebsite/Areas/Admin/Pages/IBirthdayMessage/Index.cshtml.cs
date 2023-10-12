@@ -20,7 +20,7 @@ namespace EvetWebsite.Areas.Admin.Pages.IBirthdayMessage
         }
 
         public IList<BirthdayMessage> BirthdayMessage { get;set; }
-
+        
         public async Task OnGetAsync()
         {
             BirthdayMessage = await _context.BirthdayMessages.ToListAsync();

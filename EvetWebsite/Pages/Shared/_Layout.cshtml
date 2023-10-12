@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="WFK0z-Ggltx2OHM5nStj9eZhKMHeLEjKiQvAfhPdLOQ" />
- 
+
 
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <script>
@@ -496,8 +496,9 @@
             margin-top: -60px;
             margin-bottom: 0px;
         }
-        .form-group{
-            margin-top:15px !important;
+
+        .form-group {
+            margin-top: 15px !important;
         }
     </style>
 </head>
@@ -953,6 +954,9 @@
                                                     <a class="rkit-menu-text " asp-page="/ReservationPage">Reservation</a>
                                                 </div>
                                                 <div class="rkit-menu ">
+                                                    <a class="rkit-menu-text " asp-page="/Committees">Committees</a>
+                                                </div>
+                                                <div class="rkit-menu ">
                                                     <a class="rkit-menu-text " asp-page="/ContactUs">Contact Me</a>
                                                 </div>
                                                 <div class="rkit-menu ">
@@ -971,6 +975,9 @@
                                                 </div>
                                                 <div class="rkit-menu ">
                                                     <a class="rkit-menu-text " asp-page="/ReservationPage">Reservation</a>
+                                                </div>
+                                                <div class="rkit-menu ">
+                                                    <a class="rkit-menu-text " asp-page="/Committees">Committees</a>
                                                 </div>
                                                 <div class="rkit-menu ">
                                                     <a class="rkit-menu-text  " asp-page="/ContactUs">Contact Me</a>
@@ -1003,6 +1010,9 @@
                 </section>
             </div>
         </header>
+        
+
+
         @RenderBody()
 
         <footer itemscope="itemscope" itemtype="https://schema.org/WPFooter">
@@ -1565,7 +1575,7 @@
     <script src="~/web/tabs.js" id="rkit-tabs-script-js"></script>
     <script src="~/web/hello-frontend.min.js" id="hello-theme-frontend-js"></script>
     <script src="~/web/frontend-script.js" id="elementskit-framework-js-frontend-js"></script>
-    
+
     <script src="~/web/widget-scripts.js" id="ekit-widget-scripts-js"></script>
     <script id="mediaelement-core-js-before">
         var mejsL10n = { "language": "en", "strings": { "mejs-file": "Download File", "mejs.install-flash": "You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/", "mejs.fullscreen": "Fullscreen", "mejs.play": "Play", "mejs.pause": "Pause", "mejs.time-slider": "Time Slider", "mejs.time-help-text": "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.", "mejs.live-broadcast": "Live Broadcast", "mejs.volume-help-text": "Use Up\/Down Arrow keys to increase or decrease volume.", "mejs.unmute": "Unmute", "mejs.mute": "Mute", "mejs.volume-slider": "Volume Slider", "mejs.video-player": "Video Player", "mejs.audio-player": "Audio Player", "mejs.captions-subtitles": "Captions\/Subtitles", "mejs.captions-chapters": "Chapters", "mejs.none": "None", "mejs.afrikaans": "Afrikaans", "mejs.albanian": "Albanian", "mejs.arabic": "Arabic", "mejs.belarusian": "Belarusian", "mejs.bulgarian": "Bulgarian", "mejs.catalan": "Catalan", "mejs.chinese": "Chinese", "mejs.chinese-simplified": "Chinese (Simplified)", "mejs.chinese-traditional": "Chinese (Traditional)", "mejs.croatian": "Croatian", "mejs.czech": "Czech", "mejs.danish": "Danish", "mejs.dutch": "Dutch", "mejs.english": "English", "mejs.estonian": "Estonian", "mejs.filipino": "Filipino", "mejs.finnish": "Finnish", "mejs.french": "French", "mejs.galician": "Galician", "mejs.german": "German", "mejs.greek": "Greek", "mejs.haitian-creole": "Haitian Creole", "mejs.hebrew": "Hebrew", "mejs.hindi": "Hindi", "mejs.hungarian": "Hungarian", "mejs.icelandic": "Icelandic", "mejs.indonesian": "Indonesian", "mejs.irish": "Irish", "mejs.italian": "Italian", "mejs.japanese": "Japanese", "mejs.korean": "Korean", "mejs.latvian": "Latvian", "mejs.lithuanian": "Lithuanian", "mejs.macedonian": "Macedonian", "mejs.malay": "Malay", "mejs.maltese": "Maltese", "mejs.norwegian": "Norwegian", "mejs.persian": "Persian", "mejs.polish": "Polish", "mejs.portuguese": "Portuguese", "mejs.romanian": "Romanian", "mejs.russian": "Russian", "mejs.serbian": "Serbian", "mejs.slovak": "Slovak", "mejs.slovenian": "Slovenian", "mejs.spanish": "Spanish", "mejs.swahili": "Swahili", "mejs.swedish": "Swedish", "mejs.tagalog": "Tagalog", "mejs.thai": "Thai", "mejs.turkish": "Turkish", "mejs.ukrainian": "Ukrainian", "mejs.vietnamese": "Vietnamese", "mejs.welsh": "Welsh", "mejs.yiddish": "Yiddish" } };
@@ -1597,6 +1607,177 @@
 
 
     <script src="~/web/swiper.min.js"></script>
+
+    <style>
+
+        .clock {
+            display: flex;
+        }
+
+            .clock div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                padding: 10px;
+                background: white;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+                .clock div span {
+                    font-size: 40px;
+                    font-weight: 700;
+                }
+
+        .title {
+            font-size: xx-large;
+            margin-bottom: 20px;
+        }
+
+        @@media (max-width: 500px) {
+            .title {
+                font-size: x-large;
+            }
+
+            .clock div {
+                width: 70px;
+                height: 70px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+                .clock div span {
+                    font-size: 25px;
+                    font-weight: 700;
+                }
+        }
+    </style>
+    <!-- Subscribe Modal -->
+    <div class="modal" id="modal-subscribe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <h3 class="text-center text-uppercase" style="color: #FD8C01; font-size: 30px;">MY 60TH ANNIVERSARY ON THE 22ND OF NOV. 2023</h3>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="container">
+
+                                <div class="clock">
+                                    <div class="days">
+                                        <span id="days">00</span>
+                                        <p>DAYS</p>
+                                    </div>
+                                    <div class="hours">
+                                        <span id="hours">00</span>
+                                        <p>HOURS</p>
+                                    </div>
+                                    <div class="minutes">
+                                        <span id="minutes">00</span>
+                                        <p>MINS</p>
+                                    </div>
+                                    <div class="seconds">
+                                        <span id="seconds">00</span>
+                                        <p>SECS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <p class="text-muted small text-center">
+                                CWEENS' Girls Educational & Empowerment Home School (GEEHS) is a project that seeks to provide a safe learning and living environment for 500 vulnerable girls who are at risk or survivors of violence.
+                                Partner with us to raise  N250 million for landed property or donate a ‘Hall of Fame’ block in your name to our GEEHS Fund.
+                                <br />
+                                Or sponsor 1 girl's education & living costs @@ 24,500 per month.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" style=" width: 100%; background-color: #f58b00; border: 1px solid #f58b00; color: white; font-weight: 800;" asp-page="/WriteWishes">Click here to write her a wish.</a>
+                    <a class="btn btn-primary" style=" width: 100%; background-color: #f58b00; border: 1px solid #f58b00; color: white; font-weight: 800;">Make Donations for a Girl Child...click here</a>
+                    <a class="btn btn-primary" style=" width: 100%; background-color: #f58b00; border: 1px solid #f58b00; color: white; font-weight: 800;" asp-page="/Attending">Who is attending?...click here</a>
+                    <a class="btn btn-primary" style=" width: 100%; background-color: #f58b00; border: 1px solid #f58b00; color: white; font-weight: 800;" asp-page="/ReservationPage">Make a reservation...click here</a>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style=" width: 100%; background-color: #f58b00; border: 1px solid #f58b00; color: white; font-weight: 800;"><span aria-hidden="true">Close</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .border-0 {
+            border: 0;
+        }
+
+        .width-100 {
+            width: 100%;
+        }
+    </style>
+    <script>
+        $(window).ready(function () {
+            setTimeout(function () {
+                $('#modal-subscribe').modal("show")
+            }, 3000)
+        })
+    </script>
+    <script>
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+        let countDown = new Date('NOV 23, 2023 00:00:00').getTime(),
+            x = setInterval(function () {
+
+                let now = new Date().getTime(),
+                    distance = countDown - now;
+
+                document.getElementById('days').innerHTML = Math.floor(distance / (day)),
+                    document.getElementById('hours').innerHTML = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById('minutes').innerHTML = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById('seconds').innerHTML = Math.floor((distance % (minute)) / second);
+
+                //do something later when date is reached
+                //if (distance < 0) {
+                //  clearInterval(x);
+                //  'IT'S MY BIRTHDAY!;
+                //}
+
+            }, second)
+
+    </script>
+    <script>
+        const isecond = 1000,
+            iminute = isecond * 60,
+            ihour = iminute * 60,
+            iday = ihour * 24;
+
+        let icountDown = new Date('NOV 23, 2023 00:00:00').getTime(),
+            ix = setInterval(function () {
+
+                let inow = new Date().getTime(),
+                    idistance = icountDown - inow;
+
+                document.getElementById('idays').innerHTML = Math.floor(idistance / (iday)),
+                    document.getElementById('ihours').innerHTML = Math.floor((idistance % (iday)) / (ihour)),
+                    document.getElementById('iminutes').innerHTML = Math.floor((idistance % (ihour)) / (iminute)),
+                    document.getElementById('iseconds').innerHTML = Math.floor((idistance % (iminute)) / isecond);
+
+                //do something later when date is reached
+                //if (distance < 0) {
+                //  clearInterval(x);
+                //  'IT'S MY BIRTHDAY!;
+                //}
+
+            }, isecond)
+
+    </script>
 </body>
 </html>
 

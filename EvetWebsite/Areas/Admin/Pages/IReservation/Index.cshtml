@@ -13,7 +13,19 @@
         {
             <a asp-page="./Create" class="btn bg-gradient-warning btn-sm" style="float:right;">Add New</a>
         }
+    </div>
+    <div class="card-header">
+        <div class="btn-group">
+            <button class="btn btn-primary">
+                Reservations Made<br />
+                (@Model.Reservation.Count())
+            </button>
+            <button class="btn btn-success">
+                Verified Reservations<br />
+                (@Model.Reservation.Where(x => x.VerifiedReservation == true).Count())
+            </button>
         </div>
+    </div>
     <!-- /.card-header -->
     <div class="card-body">
         <div class="table-responsive">
@@ -40,7 +52,7 @@
                             @Html.DisplayNameFor(model => model.Reservation[0].Date)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Reservation[0].Note)
+                            Verified Reservation
                         </th>
                         <th></th>
                     </tr>
@@ -78,7 +90,7 @@
                                 @Html.DisplayFor(modelItem => item.Date)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Note)
+                                @Html.DisplayFor(modelItem => item.VerifiedReservation)
                             </td>
                             <td>
                                 <div class="btn-group">

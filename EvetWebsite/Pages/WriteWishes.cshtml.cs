@@ -48,7 +48,7 @@ namespace EvetWebsite.Pages
 
                 StreamReader sr = new StreamReader(htmlFilePath);
                 MailMessage mail = new MailMessage();
-                string mi = $"Thank You for the wishes. I really Appreciate.";
+                string mi = $"I wanted to take a moment to express my sincere gratitude for the wonderful birthday wishes you sent my way ,Your warm words, thoughtful messages, and the love you showered me with made my day truly special.Here's to more beautiful memories together in the future.";
 
 
                 string mailmsg = sr.ReadToEnd();
@@ -64,7 +64,7 @@ namespace EvetWebsite.Pages
             {
 
             }
-            TempData["success"] = "Thank You For the Wishes. A so Blessed";
+            TempData["success"] = "I wanted to take a moment to express my sincere gratitude for the wonderful birthday wishes you sent my way ,Your warm words, thoughtful messages, and the love you showered me with made my day truly special.Here's to more beautiful memories together in the future.";
             return RedirectToPage("./Success");
         }
     }

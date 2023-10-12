@@ -1,0 +1,74 @@
+﻿@page
+@model EvetWebsite.Areas.Admin.Pages.IInvitationRequest.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="card card-default">
+    <div class="card-header">
+        <h3 class="card-title">DETAILS INVITATION REQUEST</h3>
+
+    </div>
+    <!-- /.card-header -->
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InvitationRequest.Fullname)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InvitationRequest.Fullname)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InvitationRequest.Phone)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InvitationRequest.Phone)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InvitationRequest.Email)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InvitationRequest.Email)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InvitationRequest.Office)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InvitationRequest.Office)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InvitationRequest.Date)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InvitationRequest.Date)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InvitationRequest.Note)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InvitationRequest.Note)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.InvitationRequest.Status)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.InvitationRequest.Status)
+                    </dd>
+                </dl>
+            </div>
+
+            <a asp-page="./Edit" asp-route-id="@Model.InvitationRequest.Id" class="btn bg-gradient-warning btn-sm" style="float:right;">Update</a>
+            <a asp-page="./Index" class="btn bg-gradient-warning btn-sm" style="float:right;">Back</a>
+
+        </div>
+    </div>
+
+
+    <!-- /.row -->
+</div>
+<!-- /.card-body -->
+<div class="card-footer">
+</div> 

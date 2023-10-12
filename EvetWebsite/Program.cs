@@ -45,7 +45,12 @@ namespace EvetWebsite
                 options.Lockout.AllowedForNewUsers = false;
 
             });
-
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = $"/Login";
+                options.LogoutPath = $"/Logout";
+                options.AccessDeniedPath = $"/AccessDenied";
+            });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

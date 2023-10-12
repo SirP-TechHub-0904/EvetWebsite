@@ -30,11 +30,7 @@ namespace EvetWebsite.Areas.Admin.Pages.ICommitteeCategory
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
+            
             _context.CommitteeCategories.Add(CommitteeCategory);
             await _context.SaveChangesAsync();
 
