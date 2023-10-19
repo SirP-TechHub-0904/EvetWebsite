@@ -657,6 +657,7 @@
                             ::-webkit-scrollbar {
                                 display: none;
                             }
+
                             .faq input[type="checkbox"]:checked + label {
                                 display: block;
                                 background: rgba(255,255,255,255) !important;
@@ -675,21 +676,83 @@
                                             <div class='faq'>
                                                 @foreach (var list in Model.CommitteeCategory)
                                                 {
-                                                    <input id='faq-@list.Id' type='checkbox' checked="checked">
-                                                    <label for='faq-@list.Id'>
-                                                        <p class="faq-heading" style="padding: 20px; background-color: #f58b00; font-weight: 900; color: white;">@list.Title</p>
-                                                        <div class='faq-arrow'></div>
-                                                        <div class="faq-text">
+                                                    if (list.DisplayImage == true)
+                                                    {
+                                                        <input id='faq-@list.Id' type='checkbox' checked="checked">
+                                                        <label for='faq-@list.Id'>
+                                                            <p class="faq-heading" style="padding: 20px; background-color: #f58b00; font-weight: 900; color: white;text-align:center;">@list.Title</p>
+                                                            <div class='faq-arrow'></div>
+                                                            <div class="faq-text">
+                                                                <div class="row">
+                                                                    @foreach (var mlist in list.Committees)
+                                                                    {
+                                                                        <div class="col-md-4">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <div style="margin:0 auto;text-align:center;">
+                                                                                        <img src="@mlist.ImageUrl" class="img-fluid" style="margin:0 auto;text-align:center;max-height:300px;" />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card-footer">
+                                                                                    <h3 style=" font-size: 20px;">@mlist.Name</h3>
+                                                                                    <h6>@mlist.Office</h6>
+                                                                                </div>
 
-                                                            <ul>
-                                                                @foreach (var item in list.Committees)
-                                                                {
-                                                                    <li style=" font-weight: 800;">@item.Name (@item.Office)</li>
-                                                                }
-                                                            </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </label>
+                                                    }
+                                                    else
+                                                    {
+                                                        <input id='faq-@list.Id' type='checkbox' checked="checked">
+                                                        <label for='faq-@list.Id'>
+                                                            <p class="faq-heading" style="padding: 20px; background-color: #f58b00; font-weight: 900; color: white;text-align:center;">@list.Title</p>
+                                                            <div class='faq-arrow'></div>
+                                                            <div class="faq-text">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <ul>
+                                                                            @foreach (var item in list.Committees)
+                                                                            {
+                                                                                if (item.DisplayImage == false)
+                                                                                {
+                                                                                    <li style=" font-weight: 800;">@item.Name (@item.Office)</li>
+                                                                                }
+                                                                            }
+                                                                        </ul>
 
-                                                        </div>
-                                                    </label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        @foreach (var mlist in list.Committees)
+                                                                        {
+                                                                            if (mlist.DisplayImage == true)
+                                                                            {
+                                                                                <div class="col-md-8">
+                                                                                    <div class="card">
+                                                                                        <div class="card-body">
+                                                                                            <div style="margin:0 auto;text-align:center;">
+                                                                                                <img src="@mlist.ImageUrl" class="img-fluid" style="margin: 0 auto; text-align: center; max-height: 300px;" />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="card-footer">
+                                                                                            <h3 style=" font-size: 20px;">@mlist.Name</h3>
+                                                                                            <h6>@mlist.Office</h6>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            }
+                                                                        }
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </label>
+                                                    }
+
                                                 }
                                             </div>
 
