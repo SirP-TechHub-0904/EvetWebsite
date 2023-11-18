@@ -21,5 +21,6 @@ namespace EvetWebsite.Data
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<InvitationRequest> InvitationRequests {  get; set; } 
         public DbSet<RSVP> RSVPs { get; set; }
+        public DbSet<PreorderForm> PreorderForms { get; set; }
     }
 }
