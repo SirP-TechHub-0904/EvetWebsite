@@ -479,12 +479,12 @@
     <script src="~/web/template-kit-export-public.min.js" id="template-kit-export-js"></script>
 
     <script src="~/web/wp-emoji-release.min.js" defer=""></script>
+    @await Component.InvokeAsync("Title", new { name = ViewData["Title"] })
 
-    <title>@ViewData["Title"] | Prof. Oluwafunmilayo J. Para-mallam, FCPA, MloD, mni</title>
-    <link rel="icon" href="~/img/icon.jpg" type="image/x-icon" />
+     <link rel="icon" href="~/img/icon.jpg" type="image/x-icon" />
 
     <meta name="description" content="Prof. Oluwafunmilayo Josephine Para-Mallam, mni: Accomplished Academic and Leader With a PhD in Development Studies from the University of Leeds, UK Prof. Para-Mallam is a pioneering Professor of Gender and Development. Joining the National Institute in 1989, she became the first female Professor in 2011. Her roles range from Editorial Assistant to Senior Fellow in the Directorate of Research. She's shaped policies like the University of Jos Sexual Harassment Policy and the Gender and Health Policy. Beyond academia, she values family and enjoys reading, writing, and design.">
-    <meta property="og:title" content="Prof. Oluwafunmilayo J. Para-mallam, FCPA, MloD, mni">
+   
     <meta property="og:description" content="Prof. Oluwafunmilayo Josephine Para-Mallam, mni: Accomplished Academic and Leader With a PhD in Development Studies from the University of Leeds, UK Prof. Para-Mallam is a pioneering Professor of Gender and Development. Joining the National Institute in 1989, she became the first female Professor in 2011. Her roles range from Editorial Assistant to Senior Fellow in the Directorate of Research. She's shaped policies like the University of Jos Sexual Harassment Policy and the Gender and Health Policy. Beyond academia, she values family and enjoys reading, writing, and design.">
     <meta property="og:image" content="~/img/icon.jpg">
     <meta property="og:url" content="http://paramallam.com.ng/">
